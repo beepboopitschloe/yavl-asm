@@ -2,12 +2,21 @@
 #define _YAVL_ASM_H
 
 typedef enum {
+	NUL,
+
 	/**
 	 * PSH $N
 	 *
 	 * Push the value $N onto the stack.
 	 */
 	PSH,
+
+	/**
+	 * POP
+	 *
+	 * Pop the stack and discard the value.
+	 */
+	POP,
 
 	/**
 	 * ADD
@@ -18,11 +27,18 @@ typedef enum {
 	ADD,
 
 	/**
-	 * POP
+	 * LGI
 	 *
-	 * Pop the stack and discard the value.
+	 * Pop the stack and log the value as an integer.
 	 */
-	POP,
+	LGI,
+
+	/**
+	 * HLT
+	 *
+	 * Halt the program and exit successfully.
+	 */
+	HLT,
 
 	/**
 	 * SET $R, $N
@@ -30,13 +46,6 @@ typedef enum {
 	 * Store the literal value $N in the register $R.
 	 */
 	SET,
-
-	/**
-	 * LGI
-	 *
-	 * Pop the stack and log the value as an integer.
-	 */
-	LGI,
 
 	/**
 	 * LGC
@@ -86,14 +95,7 @@ typedef enum {
 	 * Pop the twop two values off the stack and jump to line $N if they are not
 	 * equal.
 	 */
-	JNQ,
-
-	/**
-	 * HLT
-	 *
-	 * Halt the program and exit successfully.
-	 */
-	HLT
+	JNQ
 } YAVL_ASM;
 
 #endif
