@@ -34,6 +34,13 @@ typedef enum {
 	LGI,
 
 	/**
+	 * LGC
+	 *
+	 * Pop the stack and log the value as a char.
+	 */
+	LGC,
+
+	/**
 	 * HLT
 	 *
 	 * Halt the program and exit successfully.
@@ -48,11 +55,11 @@ typedef enum {
 	SET,
 
 	/**
-	 * LGC
+	 * GET $R
 	 *
-	 * Pop the stack and log the value as a char.
+	 * Get the value from register $R and store it in the stack.
 	 */
-	LGC,
+	GET,
 
 	/**
 	 * JMP $N
