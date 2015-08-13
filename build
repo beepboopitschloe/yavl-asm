@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+# read YASM definition from yasm-definition
+# generate enum into yasm.h
+
+output = File.open("yasm.h", "w")
+
+# write the head of the output file
+output.write([
+	"#ifndef _YASM_H",
+	"#define _YASM_H",
+
+	"typedef enum {"
+].join("\n"))
+
+instrs = []
+
+File.foreach("yasm-definition") do |line|
+	line.strip!
+
+	if line[0] != '#' and line.length > 0
+		instrs << line.split(/\s/)[0]
+	end
+end
+
+# write instructions
+output.write(instrs.join(","))
+
+# write the tail of the output file
+output.write([
+	"} YAVL_ASM;",
+	"#endif"
+].join("\n"))
+

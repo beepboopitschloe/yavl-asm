@@ -1,0 +1,39 @@
+# yasm-definition
+#
+# definition file for YASM
+# Lines beginning with # are ignored. Blank lines are ignored.
+# Otherwise, lines are interpreted like so:
+#
+# <instruction> <arity>
+#
+# The line number of an instruction is its opcode.
+
+# push a number onto the stack
+PSH 1
+
+# pop a value off the stack and discard it
+POP 0
+
+# pop the top two numbers off the stack, add them, and push the result onto the
+# stack
+ADD 0
+
+# pop a value off the stack and log it as an integer
+LGI 0
+
+# pop the stack and log the value as a character
+LGC 0
+
+# halt the program and exit with status 0
+HLT 0
+
+# set value into register
+SET 2
+
+# get value from register and store in stack
+GET 1
+
+# jump unconditionally to offset $N
+# JMP $N
+JMP 1
+
