@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Create a release of yavl-asm
+
+version=$1
+
+function usage() {
+	echo "USAGE:"
+	echo "  ./release <VERSION>"
+}
+
+if [[ -z $version ]]; then
+	usage
+	exit 1
+fi
+
+./build
+
+git add yasm-spec yasm-h
+git commit -m "Create build $version"
+git tag $version
+git push
+git push --tags
+
