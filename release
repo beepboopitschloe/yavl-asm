@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Create a release of yavl-asm
 
 version=$1
