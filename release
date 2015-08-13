@@ -16,7 +16,7 @@ fi
 
 ./build
 
-git add yasm-spec yasm-h
+git add yasm-spec yasm.h
 git commit -m "Create build $version"
 git tag $version
 git push

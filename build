@@ -15,7 +15,7 @@ output.write([
 
 instrs = []
 
-File.foreach("yasm-definition") do |line|
+File.foreach("yasm-spec") do |line|
 	line.strip!
 
 	if line[0] != '#' and line.length > 0
