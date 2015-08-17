@@ -18,6 +18,16 @@ POP 0
 # stack
 ADD 0
 
+# pop the top two numbers off the stack, subtract them, and push the result onto
+# the stack
+SUB 0
+
+# like ADD and SUB but for multiplying
+MUL 0
+
+# like ADD, SUB, MUL but for division
+DIV 0
+
 # pop a value off the stack and log it as an integer
 LGI 0
 
@@ -34,6 +44,11 @@ SET 2
 GET 1
 
 # jump unconditionally to offset $N
-# JMP $N
 JMP 1
+
+# pop a value off the stack and jump to $N if it is 0
+JEQ 1
+
+# pop a value off the stack and jump to $N if it is not 0
+JNE 1
 
